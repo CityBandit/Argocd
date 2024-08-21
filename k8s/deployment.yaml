@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata: 
+  name: argocd-deployment
+  labels:
+    app: argocd
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argocd 
+
+  template:
+    metadata:
+      labels:
+        app: argocd
+    
+    spec:
+      containers:
+        - name:  image 
+          image: kariukiantony/ # The image to pull from 
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: Always
+          env:
+            - name:  FLASK_DEBUG
+              value:  "1"
