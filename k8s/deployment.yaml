@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name:  image 
-          image: kariukiantony/ # The image to pull from 
+          image: kariukiantony/firstflask:latest # The image to pull from 
           ports:
             - containerPort: 5000
           imagePullPolicy: Always
